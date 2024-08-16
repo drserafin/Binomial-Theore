@@ -16,7 +16,7 @@ This project presents the development of the binomial theorem from Euclid's geom
 
 ## View the PDF
 
-You can view the PDF directly by [clicking here](./MATH_380-Presentation.pdf).
+You can pre view and download the raw PDF file directly by [clicking here](./MATH_380-Presentation.pdf).
 
 
 ## License
