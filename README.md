@@ -11,5 +11,13 @@ This project presents the development of the binomial theorem from Euclid's geom
 - **Visual Aids and Examples**: Graphics and examples used.
 - **Presentation Materials**: Slides and supplementary 
 
+# Contributing
+- Constributions are welcomes! If you have sugguestions, fixes, or improvements for this project please feel free to send a pull request. Your input is highly appreciated.
+
+## View the PDF
+
+You can view the PDF directly by [clicking here](./MATH_380-Presentation.pdf).
+
+
 ## License
 This project is licensed under the MIT License.

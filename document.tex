@@ -1,0 +1,217 @@
+\documentclass{beamer}
+
+% Choose how your presentation looks. THIS IS IMPORTANT! 
+% For more themes, color themes, and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html 
+
+% Have fun making it your own. 
+\mode<presentation>
+{
+  \usetheme{Madrid}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{serif}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+
+\theoremstyle{plain}
+\newtheorem{propn}{Proposition}[section]
+\newtheorem{thm}[propn]{Theorem}
+\newtheorem{cor}[propn]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}[propn]{Definition}
+\newtheorem*{caution}{Caution}
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{rems}{Remarks}
+
+\newenvironment{rlist}
+{\renewcommand{\theenumi}{\roman{enumi}}
+\renewcommand{\labelenumi}{\textup{(\theenumi)}}
+\begin{enumerate}}
+{\end{enumerate}}
+
+\title{Binomial Theorem}
+\author{Kevin Serafin and Lily Morales}
+\institute{CSU Fullerton}
+
+
+\begin{document}
+
+\begin{frame}
+ \titlepage
+\end{frame}
+
+\section{Historical Background of the Binomial Theorem}
+
+\begin{frame}{Historical Background} 
+It is important to note that different parts of the binomial expansion were discovered in various parts of the world, which helped Newton develop his binomial theorem. Euclid was the first historical mathematician to contribute to the understanding of the binomial expansion. He was able to express the binomial expansion of \( (x+y)^2 \) in geometric terms, using a method similar to completing a punnet square.
+
+\begin{center}
+    \includegraphics[width=4cm, height=4cm]{Euclid.jpeg}
+\end{center}
+\end{frame}
+
+\begin{frame}{Euclid's Binomial Expansion of \((x+y)^2\)}
+To start, we use Euclid's binomial expansion of \((x+y)^2\) in geometric terms. First, we create a square to illustrate that \(x+y\) is both the length and the width of the square. When multiplied together, this results in \((x+y)^2\).
+
+\begin{center}
+    \includegraphics[width=5cm, height=4cm]{x+y.png}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}{Euclid's Binomial Expansion of \((x+y)^2\)}
+Once the square is created, you then multiply each row by each column in the square. This allows us to find the area of each given square.
+
+\begin{center}
+    \includegraphics[width=3cm]{x+y2.png}
+\end{center}
+
+\vspace{0.2cm}
+Row 1 $\cdot$ Column 1 = $x^2$
+
+\vspace{0.2cm}
+Row 1 $\cdot$ Column 2 = $xy$
+
+\vspace{0.2cm}
+Row 2 $\cdot$ Column 1 = $xy$
+
+\vspace{0.2cm}
+Row 2 $\cdot$ Column 2 = $y^2$
+
+\vspace{0.2cm}
+After finding the area of each given square, you combine like terms to get the expansion of \((x+y)^2\), which is \((x+y)^2 = x^2 + 2xy + y^2\).
+\end{frame}
+
+
+\begin{frame}{Pascal's Triangle}
+Yang Hui is also a contributor to our understanding of binomial expansion. Between 1261 and 1275, he used Pascal's triangle to help solve binomial coefficients. This triangle, known as Pascal’s triangle, illustrates the predictable patterns in the \(x\) and \(y\) values and their coefficients when expanding a binomial.
+
+\begin{center}
+    \includegraphics[width=5cm, height=5cm]{Yanghui.jpeg}
+\end{center}
+\end{frame}
+
+\begin{frame}{Binomial Expansion Using Pascal's Triangle}
+To create Pascal's triangle, start with a small triangle where all entries are 1 at the very beginning. Each entry in the triangle has two branches, and by adding the sums of the two entries directly above it, you can expand Pascal's triangle. Repeat this process until you have created the desired number of rows. The value of the exponent equals the number of rows in your triangle.
+
+\vspace{0.2cm}
+Example: \((x+y)^4\)
+
+\begin{center}
+    \includegraphics[width=7cm, height=4cm]{Pascal's.jpg}
+\end{center}
+\end{frame}
+
+\begin{frame}{Binomial Expansion Using Pascal's Triangle}
+The numbers in the 4th row are the coefficients for \((x+y)^4\).
+
+\vspace{0.2cm}
+Each coefficient gets an \(x\) and \(y\) value, with the \(x\) values increasing and \(y\) decreasing.  
+Using Pascal's triangle, we get the expansion:
+$$(x+y)^4 = 1x^4y^0 + 4x^3y^1 + 6x^2y^2 + 4x^1y^3 + 1x^0y^4.$$
+
+\begin{center}
+    \includegraphics[width=7cm, height=4cm]{Pascal's.jpg}
+\end{center}
+\end{frame}
+
+\section{Motivation and Background}
+
+\begin{frame}{Newton's Binomial Theorem}
+Newton's binomial theorem states that for any non-negative integers \(n\) and \(k\), and any real or complex numbers \(a\) and \(b\), we have:
+
+$$(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k$$
+
+where \(\binom{n}{k}\) represents the binomial coefficient, which is defined as:
+
+$$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$
+
+and \(a^{n-k} b^k\) represents the product of \(k\) factors of \(b\) and \(n-k\) factors of \(a\), arranged in any order.
+
+\vspace{0.1cm}
+For example: if \(n = 6\), \((a+b)^6\) expands to: \textcolor{red}{$a^6 + 6 a^5 b + 15 a^4 b^2 + 20 a^3 b^3 + 15 a^2 b^4 + 6 a b^5 + b^6$}
+\end{frame}
+
+\begin{frame}{Finding the Exponents for the Expansion of \((a+b)^n\)}
+\vspace{0.2cm}
+$$(a+b)^5 = \textcolor{red}{a^5} + 5\textcolor{red}{a^4}\textcolor{blue}{b} + 10\textcolor{red}{a^3}\textcolor{blue}{b^2} + 10\textcolor{red}{a^2}\textcolor{blue}{b^3} + 5\textcolor{red}{a}\textcolor{blue}{b^4} + \textcolor{blue}{b^5}$$
+
+\vspace{0.3cm}
+We can see that the exponents of \(a\) decrease while the exponents of \(b\) increase.
+
+\vspace{0.3cm}
+The formula for finding these exponents is: 
+\textbf{$a^{n-k} b^k$}, where \(k\) ranges from 0 to \(n\).
+
+\vspace{0.3cm}
+For example, when \(n\) is 4, we have the following exponents for \((a+b)^4\) in order:
+
+\vspace{0.2cm}
+$a^{4-0} b^0 = \textcolor{red}{a^4}$, $a^{4-1} b^1 = \textcolor{red}{a^3 b}$, $a^{4-2} b^2 = \textcolor{red}{a^2 b^2}$, $a^{4-3} b^3 = \textcolor{red}{a b^3}$, $a^{4-4} b^4 = \textcolor{red}{b^4}$
+\end{frame}
+
+\begin{frame}{Finding the Coefficients for the Expansion of \((a+b)^n\)}
+The formula to find the coefficients for each term in the expansion of \((a+b)^n\) is: \textcolor{red}{$\binom{n}{k} = \frac{n!}{k!(n-k)!}$}
+
+\vspace{0.3cm}
+This formula tells us how many ways we can choose \(k\) values from a set of \(n\) values.
+
+\vspace{0.3cm}
+For example, when \(n = 4\), we get the following expansion:
+
+\vspace{0.1cm}
+$$(a+b)^4 = \binom{4}{0}a^4 + \binom{4}{1}a^3b + \binom{4}{2}a^2b^2 + \binom{4}{3}ab^3 + \binom{4}{4}b^4$$
+
+\vspace{0.3cm}
+$$= \frac{4!}{0!(4-0)!} a^4 + \frac{4!}{1!(4-1)!} a^3 b + \frac{4!}{2!(4-2)!} a^2 b^2 + \frac{4!}{3!(4-3)!} ab^3 + \frac{4!}{4!(4-4)!} b^4$$
+
+\vspace{0.3cm}
+$$= \textcolor{red}{1} a^4 + \textcolor{red}{4} a^3 b + \textcolor{red}{6} a^2 b^2 + \textcolor{red}{4} ab^3 + \textcolor{red}{1} b^4$$
+\end{frame}
+
+\begin{frame}{Maclaurin Series}
+The binomial theorem can be used to derive the Maclaurin series for certain functions like \((1+x)^n\):
+
+$$\sum_{k=0}^{\infty} \binom{n}{k} x^k$$
+
+Replacing \(\binom{n}{k}\) with its formula in terms of factorials gives us:
+
+$$\sum_{k=0}^{\infty} \frac{n!}{k!(n-k)!} x^k$$
+
+By using mathematical induction, \(\sum_{k=0}^{\infty} \binom{n}{k}\) can be simplified to:
+
+$$(1+x)^n = 1 + nx + \frac{n(n-1)}{2!}x^2 + \frac{n(n-1)(n-2)}{3!}x^3 + \cdots$$
+
+This formula correctly counts the number of ways to choose \(k\) elements out of \(n\) elements.
+\end{frame}
+
+\begin{frame}{Example}
+For example, the first four terms of the function \((1+x)^{\frac{1}{3}}\):
+
+\vspace{0.2cm}
+$$(1+x)^{\frac{1}{3}} = \sum_{k=0}^{\infty} \binom{\frac{1}{3}}{k} x^k$$
+
+\vspace{0.2cm}
+Using the formula:
+
+$$(1+x)^{\frac{1}{3}} = 1 + \frac{1}{3}x + \frac{\frac{1}{3}(\frac{1}{3}-1)}{2!}x^2 + \frac{\frac{1}{3}(\frac{1}{3}-1)(\frac{1}{3}-2)}{3!}x^3 + \cdots$$
+
+\vspace{0.2cm}
+$$= 1 + \frac{1}{3}x - \frac{1}{9}x^2 + \frac{5}{81}x^3$$
+\end{frame}
+
+\begin{frame}{Overall}
+Newton utilized the Binomial Theorem to tackle complex problems in calculus and physics, areas he was eager to explore and advance. This theorem was a powerful tool that enabled him to expand expressions and make approximations, which were crucial for solving these challenges.
+\end{frame}
+
+\end{document}
