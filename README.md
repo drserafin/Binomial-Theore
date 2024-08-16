@@ -1,2 +1,15 @@
-# Binomial-Theore
-This project provides a summary of the development of the binomial theorem, highlighting contributions from Euclid and Isaac Newton. It showcases the progression from early geometric methods to Newton's algebraic approach.
+# The Evolution of the Binomial Theorem: From Euclid to Newton
+
+## Overview
+This project presents the development of the binomial theorem from Euclid's geometric approach to Newton's algebraic expansion. It was created for a Math 380 history math class and includes contributions from both Kevin Serafin and Lily Morales.
+
+## Contents
+- **Introduction**: Overview and objectives.
+- **Euclid's Contributions**: Geometric methods and visual aids.
+- **Development through History**: Key historical contributions.
+- **Newton's Approach**: Algebraic expansion and formulas.
+- **Visual Aids and Examples**: Graphics and examples used.
+- **Presentation Materials**: Slides and supplementary 
+
+## License
+This project is licensed under the MIT License.
